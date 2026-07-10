@@ -11,14 +11,13 @@
 
     :root {
       --navbar-height: 38px;
-      --bottom-image-height: calc(100vw * 201 / 1280);
+      --bottom-image-height: calc(100vw * 724 / 2172);
     }
 
     body {
       margin: 0;
       min-height: 100vh;
       padding-top: var(--navbar-height);
-      padding-bottom: var(--bottom-image-height);
       font-family: "Microsoft YaHei", Arial, sans-serif;
       color: #2d2400;
       background: #ffb80c;
@@ -127,14 +126,9 @@
     }
 
     .fixed-bottom-image {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      z-index: 20;
       display: block;
-      width: 100%;
-      height: var(--bottom-image-height);
-      object-fit: contain;
+      width: 100vw;
+      height: auto;
       pointer-events: none;
     }
 
