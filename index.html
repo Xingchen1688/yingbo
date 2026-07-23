@@ -90,7 +90,7 @@
     :root {
       --navbar-height: 38px;
       --ink: #2d2400;
-      --gold: #ffb80c;
+      --gold: #FFB80C;
       --gold-deep: #d89000;
       --panel: rgba(255, 255, 255, 0.2);
       --line: rgba(45, 36, 0, 0.24);
@@ -192,7 +192,7 @@
       line-height: 1.25;
       text-decoration: none;
     }
-    .keyword-link:hover, .promo-card:hover { background: rgba(255, 255, 255, 0.32); }
+    .keyword-link:hover { background: rgba(255, 255, 255, 0.32); }
     .address-buttons {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -217,8 +217,9 @@
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62), 0 8px 18px rgba(45, 36, 0, 0.18);
     }
     .section-block { width: min(980px, calc(100% - 32px)); margin: 24px auto 0; }
-    .promo-section { width: min(1180px, calc(100% - 32px)); }
+    .promo-section { width: min(1245px, calc(100% - 40px)); }
     .section-title { margin: 0 0 12px; font-size: clamp(16px, 2.2vw, 22px); font-weight: 800; line-height: 1.35; text-align: center; }
+    .promo-section .section-title { margin-bottom: 31px; line-height: 18px; color: #FFFFFF; }
     .section-copy { width: auto; font-size: clamp(11px, 1.5vw, 13px); font-weight: 650; }
     .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
     .service-card, .trust-item {
@@ -230,12 +231,34 @@
       color: var(--ink);
       text-decoration: none;
     }
-    .service-card strong, .trust-item strong, .promo-card strong { display: block; margin-bottom: 5px; font-size: clamp(13px, 1.7vw, 16px); line-height: 1.35; }
-    .service-card span, .trust-item span, .promo-card span { display: block; font-size: clamp(10px, 1.35vw, 12px); font-weight: 650; line-height: 1.6; }
-    .promo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
-    .promo-card { display: block; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); text-decoration: none; }
+    .service-card strong, .trust-item strong { display: block; margin-bottom: 5px; font-size: clamp(13px, 1.7vw, 16px); line-height: 1.35; }
+    .service-card span, .trust-item span { display: block; font-size: clamp(10px, 1.35vw, 12px); font-weight: 650; line-height: 1.6; }
+    .promo-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 44px; align-items: start; }
+    .promo-card { display: block; overflow: hidden; background: transparent; color: #FFFFFF; text-decoration: none; }
     .promo-card img { display: block; width: 100%; height: auto; background: transparent; }
-    .promo-body { display: block; padding: 12px 14px 14px; }
+    .promo-body { display: block; height: 114px; padding: 14px 10px; background: #303030; color: #FFFFFF; }
+    .promo-body strong {
+      display: -webkit-box;
+      margin-bottom: 20px;
+      overflow: hidden;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 19px;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+    .promo-body > span {
+      display: -webkit-box;
+      overflow: hidden;
+      color: #DCDCDC;
+      font-size: 12px;
+      font-weight: 650;
+      line-height: 17px;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .promo-card:hover .promo-body { background: #1E1E1E; }
     .trust-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
     .official-description {
       width: min(980px, calc(100% - 32px));
@@ -255,6 +278,7 @@
     .faq-answer { margin: 0; }
     .responsible-note { margin-bottom: 30px; font-size: clamp(10px, 1.45vw, 12px); }
     .fixed-bottom-image { flex: 0 0 auto; display: block; width: 100%; max-width: 2120px; height: auto; margin: 0 auto; pointer-events: none; }
+    @media (max-width: 980px) { .promo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } }
     @media (max-width: 820px) { .service-grid, .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 640px) {
       .logo, .nav-spacer { width: 70px; }
