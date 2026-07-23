@@ -224,7 +224,101 @@
     .section-title { margin: 0 0 12px; font-size: clamp(16px, 2.2vw, 22px); font-weight: 800; line-height: 1.35; text-align: center; }
     .promo-section .section-title { margin-bottom: 31px; line-height: 18px; color: #FFFFFF; }
     .section-copy { width: auto; font-size: clamp(11px, 1.5vw, 13px); font-weight: 650; }
-    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .game-category { width: min(1245px, calc(100% - 40px)); margin: 34px auto 0; }
+    .game-category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid #444444;
+    }
+    .game-category-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      color: #FFB80C;
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .game-category-title::before {
+      content: "";
+      flex: 0 0 10px;
+      width: 10px;
+      height: 20px;
+      border-radius: 3px;
+      background: #FFB80C;
+    }
+    .game-category-all {
+      flex: 0 0 auto;
+      color: #FFB80C !important;
+      font-size: clamp(13px, 1.5vw, 16px);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .game-category-all:hover { color: #FFD36A !important; text-decoration: underline; }
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .game-card {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 885 / 460;
+      border-radius: 8px;
+      background: #303030;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    .game-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 180ms ease;
+    }
+    .game-card:hover img { transform: scale(1.015); }
+    .game-card-footer {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 48px;
+      padding: 8px 10px 8px 14px;
+      background: rgba(16, 16, 16, 0.76);
+    }
+    .game-card-name {
+      min-width: 0;
+      overflow: hidden;
+      color: #FFFFFF;
+      font-size: clamp(14px, 1.5vw, 17px);
+      font-weight: 700;
+      line-height: 1.35;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .game-card-action {
+      flex: 0 0 auto;
+      min-width: 94px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      background: #FFB80C;
+      color: #101010;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .game-card-action.is-disabled { background: #E6E6E6; color: #303030; }
     .service-card, .trust-item {
       min-height: 86px;
       padding: 13px 14px;
@@ -297,13 +391,19 @@
     .responsible-note { margin-bottom: 30px; font-size: clamp(10px, 1.45vw, 12px); }
     .fixed-bottom-image { flex: 0 0 auto; display: block; width: 100%; max-width: 2120px; height: auto; margin: 0 auto; pointer-events: none; }
     @media (max-width: 980px) { .promo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } }
-    @media (max-width: 820px) { .service-grid, .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 820px) {
+      .game-grid, .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
     @media (max-width: 640px) {
       .logo, .nav-spacer { width: 70px; }
       .site-title { font-size: 14px; }
       .address-buttons { gap: 8px; }
       .keyword-link { flex: 1 1 128px; }
-      .service-grid, .promo-grid, .trust-grid { grid-template-columns: 1fr; }
+      .game-category { width: calc(100% - 28px); margin-top: 28px; }
+      .game-category-header { gap: 10px; margin-bottom: 14px; }
+      .game-grid, .promo-grid, .trust-grid { grid-template-columns: 1fr; }
+      .game-grid { gap: 14px; }
+      .game-card-footer { min-height: 44px; }
     }
     @media (prefers-reduced-motion: reduce) {
       .merged-carousel { overflow-x: auto; scroll-snap-type: x mandatory; }
@@ -343,15 +443,66 @@
       <a class="address-button" href="https://www.iwon42413.net" rel="noopener">iwon88备用地址</a>
     </div>
 
-    <section class="section-block" aria-label="赢博平台服务导航">
-      <h2 class="section-title">赢博平台服务导航</h2>
-      <div class="service-grid">
-        <a class="service-card" href="https://www.iwon42413.net/games/PSport.aspx" rel="noopener"><strong>体育平台</strong><span>覆盖热门体育赛事入口，适合查找赢博体育相关服务。</span></a>
-        <a class="service-card" href="https://www.iwon42413.net/games/Casino_Live.aspx" rel="noopener"><strong>真人娱乐场</strong><span>整理真人娱乐入口，访问前请核对官方地址。</span></a>
-        <a class="service-card" href="https://www.iwon42413.net/games/SlotGames.aspx" rel="noopener"><strong>棋牌&游戏</strong><span>提供棋牌和电子游戏栏目入口说明。</span></a>
-        <a class="service-card" href="https://www.iwon42413.net/games/PSport.aspx?GameType=e-sports" rel="noopener"><strong>电竞游戏</strong><span>聚合电竞相关服务入口，便于用户快速识别。</span></a>
-        <a class="service-card" href="https://www.iwon42413.net/games/GBSport.aspx?Type=SSC" rel="noopener"><strong>赢博彩票</strong><span>对应赢博彩票栏目，建议从官方入口访问。</span></a>
-        <a class="service-card" href="https://www.iwon42413.net/promotions/PromotionList.aspx" rel="noopener"><strong>优惠活动</strong><span>查看官方活动列表和最新公告信息。</span></a>
+    <section class="game-category" aria-labelledby="sports-esports-title">
+      <div class="game-category-header">
+        <h2 class="game-category-title" id="sports-esports-title">体育 &amp; 电竞</h2>
+        <a class="game-category-all" href="https://www.iwon42413.net" rel="noopener">查看所有游戏 ›</a>
+      </div>
+      <div class="game-grid">
+        <a class="game-card" href="https://www.iwon42413.net" rel="noopener">
+          <img src="img/game-home/ap-sport.png" width="885" height="460" loading="lazy" decoding="async" alt="AP体育">
+          <span class="game-card-footer"><span class="game-card-name">AP体育</span><span class="game-card-action">立即投注</span></span>
+        </a>
+        <a class="game-card" href="https://www.iwon42413.net" rel="noopener">
+          <img src="img/game-home/im-sport.png" width="885" height="460" loading="lazy" decoding="async" alt="IM体育">
+          <span class="game-card-footer"><span class="game-card-name">IM体育</span><span class="game-card-action">立即投注</span></span>
+        </a>
+        <a class="game-card" href="https://www.iwon42413.net" rel="noopener">
+          <img src="img/game-home/ap-esport.png" width="885" height="460" loading="lazy" decoding="async" alt="AP电竞">
+          <span class="game-card-footer"><span class="game-card-name">AP电竞</span><span class="game-card-action">立即投注</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="game-category" aria-labelledby="live-casino-title">
+      <div class="game-category-header">
+        <h2 class="game-category-title" id="live-casino-title">真人娱乐场</h2>
+        <a class="game-category-all" href="https://www.iwon42413.net" rel="noopener">查看所有游戏 ›</a>
+      </div>
+      <div class="game-grid">
+        <a class="game-card" href="https://www.iwon42413.net" rel="noopener">
+          <img src="img/game-home/choice-live.png" width="885" height="460" loading="lazy" decoding="async" alt="CHOICE直播厅">
+          <span class="game-card-footer"><span class="game-card-name">CHOICE直播厅</span><span class="game-card-action">立即投注</span></span>
+        </a>
+        <a class="game-card" href="https://www.iwon42413.net" rel="noopener">
+          <img src="img/game-home/vg-live.png" width="885" height="460" loading="lazy" decoding="async" alt="VG直播厅">
+          <span class="game-card-footer"><span class="game-card-name">VG直播厅</span><span class="game-card-action">立即投注</span></span>
+        </a>
+        <div class="game-card" aria-label="188娱乐场，敬请期待">
+          <img src="img/game-home/live-188.png" width="885" height="460" loading="lazy" decoding="async" alt="188娱乐场">
+          <span class="game-card-footer"><span class="game-card-name">188娱乐场</span><span class="game-card-action is-disabled">敬请期待</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-category" aria-labelledby="board-games-title">
+      <div class="game-category-header">
+        <h2 class="game-category-title" id="board-games-title">棋牌&amp;游戏</h2>
+        <a class="game-category-all" href="https://www.iwon42413.net" rel="noopener">查看所有游戏 ›</a>
+      </div>
+      <div class="game-grid">
+        <a class="game-card" href="https://www.iwon42413.net" rel="noopener">
+          <img src="img/game-home/cq9-game.jpg" width="579" height="300" loading="lazy" decoding="async" alt="CQ9游戏">
+          <span class="game-card-footer"><span class="game-card-name">CQ9游戏</span><span class="game-card-action">立即投注</span></span>
+        </a>
+        <a class="game-card" href="https://www.iwon42413.net" rel="noopener">
+          <img src="img/game-home/vg-slot.jpg" width="579" height="300" loading="lazy" decoding="async" alt="VG棋牌">
+          <span class="game-card-footer"><span class="game-card-name">VG棋牌</span><span class="game-card-action">立即投注</span></span>
+        </a>
+        <a class="game-card" href="https://www.iwon42413.net" rel="noopener">
+          <img src="img/game-home/choice-game.jpg" width="579" height="300" loading="lazy" decoding="async" alt="CHOICE游戏">
+          <span class="game-card-footer"><span class="game-card-name">CHOICE游戏</span><span class="game-card-action">立即投注</span></span>
+        </a>
       </div>
     </section>
 
